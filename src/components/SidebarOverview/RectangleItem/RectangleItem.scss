@@ -1,0 +1,17 @@
+.rectangle-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.12);
+    padding: 1rem 1rem;
+    .shape {
+        width: 40px;
+        height: 40px;
+        margin-right: 1rem;
+    }
+    .right {
+        .name {
+            margin-bottom: 1rem;
+        }
+    }
+}

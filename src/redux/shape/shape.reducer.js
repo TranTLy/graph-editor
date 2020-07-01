@@ -4,15 +4,24 @@ import ShapeTypes from "./shape.types";
 import { handleEditSingleRectangle, getDefaultRectangle, handleDeleteRectangle } from "./shape.util";
 
 const INITIAL_STATE = {
-    idCount: 1,
+    idCount: 2,
     rectangleData: [
         {
-            x: 0,
-            y: 0,
+            x: 50,
+            y: 50,
             width: 100,
             height: 100,
-            fill: 'red',
+            fill: '#FACEC0',
             id: 0,
+            name: 'Rect 1'
+        },
+        {
+            x: 100,
+            y: 200,
+            width: 100,
+            height: 100,
+            fill: '#D4CFCE',
+            id: 1,
             name: 'Rect 1'
         },
     ],

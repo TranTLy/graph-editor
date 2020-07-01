@@ -1,6 +1,5 @@
 import React from 'react';
-import { connect, ReactReduxContext, Provider} from 'react-redux';
-import { addRectangle } from '../../redux/shape/shape.actions';
+import { ReactReduxContext, Provider} from 'react-redux';
 import { Stage, Layer } from 'react-konva';
 import RectangleContainer from '../Rectangle/Rectangle.container';
 import './CustomCanvas.scss';
@@ -20,11 +19,9 @@ const CustomCanvas = ({ rectangleData, changeCurrentShape, currentShape }) => {
         <ReactReduxContext.Consumer>
             {({ store }) => (
                 <Stage
-                    style={{ backgroundColor: 'yellow' }}
-                    width={window.innerWidth - 100}
+                    style={{ backgroundColor: '#fff0f6' }}
+                    width={window.innerWidth - 500}
                     height={window.innerHeight}
-                    // width={500}
-                    // height={500}
                     onMouseDown={checkDeselect}
                     onTouchStart={checkDeselect}
                 >

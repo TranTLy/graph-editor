@@ -1,0 +1,27 @@
+@import '../../index.style.scss';
+
+.custom-button {
+    height: 4rem;
+    padding: 0 1.8rem;
+    background-color: $color-primary-3;
+    color: $color-primary-1;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    min-width: 9rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    &:hover {
+        background-color: $color-primary-4;
+    }
+    &.small {
+        height: 2rem;
+        font-size: 1.2rem;
+        background-color: $color-primary-1;
+        border: 1px solid $color-primary-4;
+        color: $color-primary-4;
+        &:hover {
+            background-color: $color-primary-2;
+        }
+    }
+}

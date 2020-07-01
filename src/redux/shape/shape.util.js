@@ -5,7 +5,7 @@ export const getDefaultRectangle = (id) => {
         y: 10,
         width: 100,
         height: 100,
-        fill: 'green',
+        fill: '#FACEC0',
         name: `Rectangle ${id||'0'}`,
     }
 }

@@ -1,15 +1,18 @@
 .custom-input {
     display: flex;
-    margin-top: 1rem;
-    align-items: center;
+    margin: 1rem 0 2rem;
+    justify-content: center;
+    flex-direction: column;
     .label {
-        width: 5rem;
+        // width: rem;
+        padding-right: 1rem;
+        margin-bottom: .8rem;
     }
     .input {
         all: none;
         border: none;
         outline: none;
-        height: 2.5rem;
+        height: 3.5rem;
         background-color: #f0f0f0;
         padding: 0 2rem;
         font-size: 1.6rem;

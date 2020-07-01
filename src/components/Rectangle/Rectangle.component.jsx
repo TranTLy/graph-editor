@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stage, Layer, Rect, Transformer } from 'react-konva';
+import { Rect, Transformer } from 'react-konva';
 
 const Rectangle = ({ shapeProps, isSelected, onSelect, onChange, editRectangle }) => {
     const shapeRef = React.useRef();

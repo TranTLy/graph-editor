@@ -1,0 +1,23 @@
+@import '../../index.style.scss';
+
+.add-rectangle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    z-index: 2000;
+    background-color: $color-primary-4;
+    color: $color-primary-1;
+    border-radius: 10px;
+    margin: 1rem 2rem 2rem;
+
+    .icon {
+        font-size: 3rem;
+        margin-right: .5rem;
+        transition: all .2s;
+    }
+    &:hover {
+        background-color: $color-primary-3;
+    }
+}
