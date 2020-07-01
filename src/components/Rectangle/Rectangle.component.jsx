@@ -1,9 +1,7 @@
 import React from 'react';
-import { render } from 'react-dom';
 import { Stage, Layer, Rect, Transformer } from 'react-konva';
 
-
-const Rectangle = ({ shapeProps, isSelected, onSelect, onChange }) => {
+const Rectangle = ({ shapeProps, isSelected, onSelect, onChange, editRectangle }) => {
     const shapeRef = React.useRef();
     const trRef = React.useRef();
 
@@ -23,8 +21,17 @@ const Rectangle = ({ shapeProps, isSelected, onSelect, onChange }) => {
                 ref={shapeRef}
                 {...shapeProps}
                 draggable
+                onDragMove= {
+                    e => {
+                        editRectangle({
+                            ...shapeProps,
+                            x: e.target.x(),
+                            y: e.target.y()
+                        });
+                    }
+                }
                 onDragEnd={e => {
-                    onChange({
+                    editRectangle({
                         ...shapeProps,
                         x: e.target.x(),
                         y: e.target.y()
@@ -41,7 +48,7 @@ const Rectangle = ({ shapeProps, isSelected, onSelect, onChange }) => {
 
                     // console.log(Math.max(5, node.width() * scaleX), node.height() * scaleY )
                     // console.log(node.x)
-                    onChange({
+                    editRectangle({
                         ...shapeProps,
                         x: node.x(),
                         y: node.y(),
@@ -63,7 +70,7 @@ const Rectangle = ({ shapeProps, isSelected, onSelect, onChange }) => {
                     // we will reset it back
                     node.scaleX(1);
                     node.scaleY(1);
-                    onChange({
+                    editRectangle({
                         ...shapeProps,
                         x: node.x(),
                         y: node.y(),
@@ -88,5 +95,6 @@ const Rectangle = ({ shapeProps, isSelected, onSelect, onChange }) => {
         </React.Fragment>
     );
 };
+
 
 export default Rectangle
