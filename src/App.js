@@ -4,19 +4,20 @@ import './App.css';
 import RectangleContainer from './components/Rectangle/Rectangle.container';
 import Rectangle from './components/Rectangle/Rectangle.component';
 import RectangleComponent from './components/Rectangle/Rectangle.component';
-import SidebarOverview from './components/SidebarOverview/SidebarOverview';
+import SidebarOverview from './components/SidebarOverview/SidebarOverview.component';
 import store from './redux/store'
 import CustomCanvasContainer from './components/CustomCanvas/CustomCanvas.container';
 import SidebarCurrentShapeContainer from './components/SidebarCurrentShape/SidebarCurrentShape.container';
+import SidebarOverviewContainer from './components/SidebarOverview/SidebarOverview.container';
+import AddRectangleContainer from './components/AddRectangle/AddRectangle.container';
 
 
 const App = () => {
   return (
     <div className="app">
-        <SidebarOverview/>
-      <div style={{width: 100, height: 200,  backgroundColor: '#999' }}>dhhd</div>
+      <AddRectangleContainer/>
+        <SidebarOverviewContainer/>
           <CustomCanvasContainer/>
-      {/* <div style={{ width: 100, height: 200, backgroundColor: '#999' }}>djdhfhhd</div> */}
       <SidebarCurrentShapeContainer/>
     </div>
   );
