@@ -1,7 +1,7 @@
 // import ShapeTypes from './shape.types';
 
 import ShapeTypes from "./shape.types";
-import { editSingleRectangle, getDefaultRectangle } from "./shape.util";
+import { handleEditSingleRectangle, getDefaultRectangle, handleDeleteRectangle } from "./shape.util";
 
 const INITIAL_STATE = {
     idCount: 1,
@@ -16,7 +16,7 @@ const INITIAL_STATE = {
             name: 'Rect 1'
         },
     ],
-    currentShape: {},
+    currentShape: null,
 };
 
 const shapeReducer = (state = INITIAL_STATE, action) => {
@@ -30,15 +30,22 @@ const shapeReducer = (state = INITIAL_STATE, action) => {
                 rectangleData: [...state.rectangleData, newRectangle]
             };
         case ShapeTypes.EDIT_RECTANGLE:
-            const newRectangleData = editSingleRectangle(state.rectangleData, payload)
+            const newRectangleData = handleEditSingleRectangle(state.rectangleData, payload)
 
             return {
                 ...state,
                 rectangleData: newRectangleData,
                 currentShape: payload
             };
+        case ShapeTypes.DELETE_RECTANGLE:
+            const rs = handleDeleteRectangle(state.rectangleData, payload)
+            return {
+                ...state,
+                rectangleData: rs,
+                // delete current shape if it is deleted
+                currentShape: state.currentShape.id === payload ? null : state.currentShape
+            };
         case ShapeTypes.CHANGE_CURRENT_SHAPE:
-            
             return {
                 ...state,
                 currentShape: payload,

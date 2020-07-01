@@ -1,0 +1,25 @@
+.custom-input {
+    display: flex;
+    margin-top: 1rem;
+    align-items: center;
+    .label {
+        width: 5rem;
+    }
+    .input {
+        all: none;
+        border: none;
+        outline: none;
+        height: 2.5rem;
+        background-color: #f0f0f0;
+        padding: 0 2rem;
+        font-size: 1.6rem;
+        border-radius: 3px;
+        transition: all .2s;
+        &:focus {
+            background-color: #e4e4e4;
+        }
+    }
+    // &__btn {
+    //     margin-left: 2rem;
+    // }
+}

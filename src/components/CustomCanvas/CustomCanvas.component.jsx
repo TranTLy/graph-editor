@@ -7,14 +7,12 @@ import './CustomCanvas.scss';
 
 
 const CustomCanvas = ({ rectangleData, changeCurrentShape, currentShape }) => {
-    // const [rectangles, setRectangles] = React.useState(rectangleData);
-    const [selectedId, selectShape] = React.useState(null);
-
     const checkDeselect = e => {
         // deselect when clicked on empty area
         const clickedOnEmpty = e.target === e.target.getStage();
         if (clickedOnEmpty) {
-            selectShape(null);
+            // TODO
+            // selectShape(null);
         }
     };
     return (

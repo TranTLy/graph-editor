@@ -10,11 +10,16 @@ export const getDefaultRectangle = (id) => {
     }
 }
 
-export const editSingleRectangle = (rectangleData, editItem) => { 
+export const handleEditSingleRectangle = (rectangleData, editItem) => { 
     return  rectangleData.map(item => {
         if (item.id ===  editItem.id)  {
             return editItem
         }
         return item
     })
+}
+
+
+export const handleDeleteRectangle = (rectangleData, deleteId) => {
+    return rectangleData.filter(item => item.id !== deleteId)
 }

@@ -15,10 +15,11 @@ import AddRectangleContainer from './components/AddRectangle/AddRectangle.contai
 const App = () => {
   return (
     <div className="app">
-      <AddRectangleContainer/>
-        <SidebarOverviewContainer/>
-          <CustomCanvasContainer/>
-      <SidebarCurrentShapeContainer/>
+      <AddRectangleContainer />
+      <SidebarOverviewContainer />
+      <SidebarCurrentShapeContainer />
+      <CustomCanvasContainer />
+
     </div>
   );
 }

@@ -14,3 +14,8 @@ export const changeCurrentShape = payload => ({
     type: ShapeTypes.CHANGE_CURRENT_SHAPE,
     payload,
 })
+
+export const deleteRectangle = payload => ({
+    type: ShapeTypes.DELETE_RECTANGLE,
+    payload,
+})
