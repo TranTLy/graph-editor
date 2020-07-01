@@ -1,11 +1,16 @@
 import ShapeTypes from "./shape.types";
 
-export const addRectangle = data => ({
+export const addRectangle = payload => ({
     type: ShapeTypes.ADD_RECTANGLE,
-    payload: data,
+    payload,
 })
 
-export const editRectangle = data => ({
+export const editRectangle = payload => ({
     type: ShapeTypes.EDIT_RECTANGLE,
-    payload: data,
+    payload,
+})
+
+export const changeCurrentShape = payload => ({
+    type: ShapeTypes.CHANGE_CURRENT_SHAPE,
+    payload,
 })

@@ -14,7 +14,8 @@ const INITIAL_STATE = {
             id: 1,
             name: 'Rect 1'
         },
-    ]
+    ],
+    currentShape: {},
 };
 
 const shapeReducer = (state = INITIAL_STATE, action) => {
@@ -27,9 +28,17 @@ const shapeReducer = (state = INITIAL_STATE, action) => {
             };
         case ShapeTypes.EDIT_RECTANGLE:
             const newRectangleData = editSingleRectangle(state.rectangleData, payload)
+
             return {
                 ...state,
-                rectangleData: newRectangleData
+                rectangleData: newRectangleData,
+                currentShape: payload
+            };
+        case ShapeTypes.CHANGE_CURRENT_SHAPE:
+            
+            return {
+                ...state,
+                currentShape: payload,
             };
         
         default:

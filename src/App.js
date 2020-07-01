@@ -7,6 +7,7 @@ import RectangleComponent from './components/Rectangle/Rectangle.component';
 import SidebarOverview from './components/SidebarOverview/SidebarOverview';
 import store from './redux/store'
 import CustomCanvasContainer from './components/CustomCanvas/CustomCanvas.container';
+import SidebarCurrentShapeContainer from './components/SidebarCurrentShape/SidebarCurrentShape.container';
 
 
 const App = () => {
@@ -15,7 +16,8 @@ const App = () => {
         <SidebarOverview/>
       <div style={{width: 100, height: 200,  backgroundColor: '#999' }}>dhhd</div>
           <CustomCanvasContainer/>
-      <div style={{ width: 100, height: 200, backgroundColor: '#999' }}>djdhfhhd</div>
+      {/* <div style={{ width: 100, height: 200, backgroundColor: '#999' }}>djdhfhhd</div> */}
+      <SidebarCurrentShapeContainer/>
     </div>
   );
 }

@@ -45,9 +45,7 @@ const Rectangle = ({ shapeProps, isSelected, onSelect, onChange, editRectangle }
                     // we will reset it back
                     node.scaleX(1);
                     node.scaleY(1);
-
-                    // console.log(Math.max(5, node.width() * scaleX), node.height() * scaleY )
-                    // console.log(node.x)
+                    
                     editRectangle({
                         ...shapeProps,
                         x: node.x(),

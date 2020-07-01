@@ -3,10 +3,11 @@ import { connect, ReactReduxContext, Provider} from 'react-redux';
 import { addRectangle } from '../../redux/shape/shape.actions';
 import { Stage, Layer } from 'react-konva';
 import RectangleContainer from '../Rectangle/Rectangle.container';
+import './CustomCanvas.scss';
 
 
-const CustomCanvas = ({ rectangleData }) => {
-    const [rectangles, setRectangles] = React.useState(rectangleData);
+const CustomCanvas = ({ rectangleData, changeCurrentShape, currentShape }) => {
+    // const [rectangles, setRectangles] = React.useState(rectangleData);
     const [selectedId, selectShape] = React.useState(null);
 
     const checkDeselect = e => {
@@ -17,6 +18,7 @@ const CustomCanvas = ({ rectangleData }) => {
         }
     };
     return (
+        <div className="custom-canvas">
         <ReactReduxContext.Consumer>
             {({ store }) => (
                 <Stage
@@ -35,9 +37,11 @@ const CustomCanvas = ({ rectangleData }) => {
                                     <RectangleContainer
                                         key={i}
                                         shapeProps={rect}
-                                        isSelected={rect.id === selectedId}
+                                        isSelected={currentShape && rect.id === currentShape.id}
                                         onSelect={() => {
-                                            selectShape(rect.id);
+                                            if (!currentShape || (currentShape && currentShape.id !== rect.id)) {
+                                                changeCurrentShape(rect);
+                                            } 
                                         }}
                                     />
                                 )
@@ -47,6 +51,7 @@ const CustomCanvas = ({ rectangleData }) => {
                 </Stage>
             )}
         </ReactReduxContext.Consumer>
+        </div>
     )
 }
 
