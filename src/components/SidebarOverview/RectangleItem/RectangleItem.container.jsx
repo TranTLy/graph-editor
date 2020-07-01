@@ -1,10 +1,11 @@
 import { connect } from "react-redux";
 import RectangleItem from "./RectangleItem.component";
-import { deleteRectangle } from "../../../redux/shape/shape.actions";
+import { deleteRectangle, changeCurrentShape } from "../../../redux/shape/shape.actions";
 
-// const mapStateToProps = (state) => ({
-//     rectangleData: state.shape.rectangleData,
-// })
+const mapStateToProps = (state) => ({
+    rectangleData: state.shape.rectangleData,
+    currentShape: state.shape.currentShape
+})
 
-const RectangleItemContainer = connect(null, { deleteRectangle})(RectangleItem);
+const RectangleItemContainer = connect(mapStateToProps, { deleteRectangle, changeCurrentShape})(RectangleItem);
 export default RectangleItemContainer

@@ -2,7 +2,6 @@ import React from 'react';
 import CustomCanvasContainer from './components/CustomCanvas/CustomCanvas.container';
 import SidebarCurrentShapeContainer from './components/SidebarCurrentShape/SidebarCurrentShape.container';
 import SidebarOverviewContainer from './components/SidebarOverview/SidebarOverview.container';
-import AddRectangleContainer from './components/AddRectangle/AddRectangle.container';
 import './App.scss';
 import './index.style.scss'
 

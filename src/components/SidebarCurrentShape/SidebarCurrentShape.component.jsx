@@ -15,8 +15,8 @@ const SidebarCurrentShape = ({ currentShape, editRectangle }) => {
         editRectangle(newItem)
     }
 
-    const onChangeColor = (_name, value) => {
-        editRectangle({...currentShape, fill: value})
+    const onChangeColor = (e) => {
+        editRectangle({...currentShape, fill: e.target.value})
     }
 
     if (currentShape) {
@@ -38,8 +38,10 @@ const SidebarCurrentShape = ({ currentShape, editRectangle }) => {
                 <div className="input-item number">
                     <CustomInput value={height} onChange={onChangeNumber} name="Height" />
                 </div>
-                <div className="input-item number">
-                    <CustomInput value={fill} onChange={onChangeColor} name="Fill" type="color"/>
+                <div className="input-item number custom-input">
+                        <label className="label">Color</label>
+                    {/* <CustomInput value={fill} onChange={onChangeColor} name="Fill" type="color"/> */}
+                    <input type="color" onChange={onChangeColor} value={fill}/>
                 </div>
             </div>
         );

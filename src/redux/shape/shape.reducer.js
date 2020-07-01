@@ -25,7 +25,15 @@ const INITIAL_STATE = {
             name: 'Rect 1'
         },
     ],
-    currentShape: null,
+    currentShape: {
+        x: 50,
+        y: 50,
+        width: 100,
+        height: 100,
+        fill: '#FACEC0',
+        id: 0,
+        name: 'Rect 1'
+    },
 };
 
 const shapeReducer = (state = INITIAL_STATE, action) => {
@@ -50,9 +58,7 @@ const shapeReducer = (state = INITIAL_STATE, action) => {
             const rs = handleDeleteRectangle(state.rectangleData, payload)
             return {
                 ...state,
-                rectangleData: rs,
-                // delete current shape if it is deleted
-                currentShape: state.currentShape.id === payload ? null : state.currentShape
+                rectangleData: rs
             };
         case ShapeTypes.CHANGE_CURRENT_SHAPE:
             return {
