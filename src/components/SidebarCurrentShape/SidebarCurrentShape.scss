@@ -1,5 +1,11 @@
 .sidebar-current-shape {
     margin: 2rem;
-    // flex: 1;
-    // order: 3;
+    .color-picker {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        .label {
+            margin-right: 2rem;
+        }
+    }
 }

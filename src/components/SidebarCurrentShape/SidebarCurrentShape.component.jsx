@@ -38,9 +38,8 @@ const SidebarCurrentShape = ({ currentShape, editRectangle }) => {
                 <div className="input-item number">
                     <CustomInput value={height} onChange={onChangeNumber} name="Height" />
                 </div>
-                <div className="input-item number custom-input">
-                        <label className="label">Color</label>
-                    {/* <CustomInput value={fill} onChange={onChangeColor} name="Fill" type="color"/> */}
+                <div className="input-item color-picker">
+                    <label className="label">Color</label>
                     <input type="color" onChange={onChangeColor} value={fill}/>
                 </div>
             </div>
