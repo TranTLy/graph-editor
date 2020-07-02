@@ -9,7 +9,7 @@ const randomPosition = () => {
 }
 
 const randomSize = () => {
-    return 10 + Math.floor(Math.random() * 200)
+    return 50 + Math.floor(Math.random() * 150)
 }
 
 export const getDefaultRectangle = (id) => {

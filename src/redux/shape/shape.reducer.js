@@ -57,9 +57,17 @@ const shapeReducer = (state = INITIAL_STATE, action) => {
             };
         case ShapeTypes.DELETE_RECTANGLE:
             const rs = handleDeleteRectangle(state.rectangleData, payload)
+            let opt = {}
+            if (state.currentShape && payload === state.currentShape.id) {
+                // delete current shape
+                opt = {
+                    currentShape: null
+                }
+            }
             return {
                 ...state,
-                rectangleData: rs
+                rectangleData: rs,
+                ...opt
             };
         case ShapeTypes.CHANGE_CURRENT_SHAPE:
             return {

@@ -1,5 +1,6 @@
 import React from 'react';
 import CustomInput from '../CustomInput/CustomInput';
+import { Empty } from 'antd';
 import './SidebarCurrentShape.scss'
 
 const SidebarCurrentShape = ({ currentShape, editRectangle }) => {
@@ -46,7 +47,10 @@ const SidebarCurrentShape = ({ currentShape, editRectangle }) => {
         );
     }
 
-    return <div>Empty</div>
+    return <div className="sidebar-current-shape">
+        <Empty className="empty" image={Empty.PRESENTED_IMAGE_SIMPLE}  description="Choose one shape to adjust"/>
+    </div>
+
 }
 
 
