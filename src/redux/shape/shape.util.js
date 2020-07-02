@@ -20,7 +20,7 @@ export const getDefaultRectangle = (id) => {
         width: randomSize(),
         height: randomSize(),
         fill: randomColor(),
-        name: `Rectangle ${id||'0'}`,
+        name: `Shape ${id||'0'}`,
     }
 }
 

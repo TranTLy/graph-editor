@@ -13,7 +13,7 @@ const CustomInput = ({name, value, onChange, type, ...props}) => {
             <input 
                 type={ type || "number"}
                 className="input" 
-                value ={ value}
+                value ={type ? value :  Math.round(value, 0)} // type is number by default
                 onChange={handleChange}
                 {...props}
                 />

@@ -20,7 +20,7 @@ const CustomCanvas = ({ rectangleData, changeCurrentShape, currentShape }) => {
             {({ store }) => (
                 <Stage
                     style={{ backgroundColor: '#fff0f6' }}
-                    width={window.innerWidth - 500}
+                    width={window.innerWidth - 400}
                     height={window.innerHeight}
                     onMouseDown={checkDeselect}
                     onTouchStart={checkDeselect}

@@ -18,6 +18,13 @@
     .right {
         .name {
             margin-bottom: 1rem;
+            display: -webkit-box;
+            word-wrap: break-word;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow-y: hidden;
+            text-overflow: ellipsis;
+            white-space: pre-line;
         }
     }
 }

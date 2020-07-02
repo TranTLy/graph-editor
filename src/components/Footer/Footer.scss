@@ -1,0 +1,10 @@
+@import '../../index.style.scss';
+
+.footer {
+    font-size: 1.4rem;
+    text-align: center;
+    span {
+        cursor: pointer;
+        color: $color-primary-4;
+    }
+}
