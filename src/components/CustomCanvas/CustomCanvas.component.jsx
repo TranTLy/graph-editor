@@ -10,12 +10,13 @@ const CustomCanvas = ({ rectangleData, changeCurrentShape, currentShape }) => {
         // deselect when clicked on empty area
         const clickedOnEmpty = e.target === e.target.getStage();
         if (clickedOnEmpty) {
-            // TODO
             // selectShape(null);
         }
     };
     return (
         <div className="custom-canvas">
+            {/* Issue with react-konva when connect with store
+            Ref: https://github.com/konvajs/react-konva/issues/311 */}
         <ReactReduxContext.Consumer>
             {({ store }) => (
                 <Stage
