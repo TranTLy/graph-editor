@@ -44,7 +44,8 @@ const shapeReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 idCount: state.idCount + 1,
-                rectangleData: [...state.rectangleData, newRectangle]
+                rectangleData: [...state.rectangleData, {...newRectangle}],
+                currentShape: {...newRectangle}
             };
         case ShapeTypes.EDIT_RECTANGLE:
             const newRectangleData = handleEditSingleRectangle(state.rectangleData, payload)
